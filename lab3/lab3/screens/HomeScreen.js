@@ -22,13 +22,13 @@ export default class HomeScreen extends React.Component {
     return (<View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         <View style={styles.getStartedContainer}>
-        <Text style={styles.getStartedText}>Elephants are amazing</Text>
+        <Text style={styles.getStartedText}>Enter Images</Text>
         <FlatList              data={[{key: 'cat1',
-                     image: require('../assets/images/elephant1.jpg')},
+                     image: require('../assets/images/[image].jpg')},
                     {key: 'cat2',
-                     image: require('../assets/images/elephant2.jpg')},
+                     image: require('../assets/images/[image].jpg')},
                      {key: 'cat3',
-                      image: require('../assets/images/elephant3.jpg')}]}
+                      image: require('../assets/images/[image].jpg')}]}
              keyExtractor={this._keyExtractor}
               renderItem={({item}) => <TouchableOpacity onPress={(event) => navigate('Detail')}>
                 <Image source={item.image} style={{width:200,height:200}} />

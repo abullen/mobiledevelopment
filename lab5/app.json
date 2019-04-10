@@ -1,0 +1,7 @@
+{
+  "expo": {
+    "name":"easyreminder",
+    "sdkVersion": "26.0.0",
+    "orientation":"portrait"
+  }
+}

@@ -29,7 +29,7 @@ export default class Detail extends React.Component {
              keyExtractor={this._keyExtractor}
               renderItem={({item}) => <TouchableOpacity onPress={(event) => navigate('Detail')}>
                 <Image source={item.image} style={{width:200,height:200}} />
-                <Text style={styles.getStartedText}>Elephant in the Serengeti</Text>
+                <Text style={styles.getStartedText}>Full Size Image</Text>
               </TouchableOpacity>}
             />
           </View>
