@@ -35,6 +35,7 @@ import DateTimeView from "../components/DateTimeView/index";
 import RepeatSwitchView from "../components/RepeatSwitchView/";
 import RepeatInterval from "../components/RepeatInterval";
 import ModalButton from "../components/Modal/ModalButton";
+import { Defaults } from "../components/Defaults";
 
 import { Permissions, Notifications } from "expo";
 const NOTIFICATION_KEY = "^notifications$";
@@ -386,7 +387,7 @@ class AddReminder extends Component {
               />
             </View>
           </Modal>
-
+          <Defaults />
           <Modal
             open={this.state.repeatType}
             modalDidClose={() => this.setState({ repeatType: false })}

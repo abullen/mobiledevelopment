@@ -71,7 +71,7 @@ class Home extends Component {
       <SafeAreaView style={{ flex: 1, backgroundColor: "#374046" }}>
         <StatusBar barStyle="light-content" />
         <Header />
-        <Defaults />
+
         {this.state.data.length > 0 ? (
           <ListItem
             renderData={this.state.data}

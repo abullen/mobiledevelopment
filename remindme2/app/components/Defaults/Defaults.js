@@ -1,10 +1,16 @@
 import React from 'react';
-import { View, TouchableOpacity, Text, Button } from 'react-native';
+import { Alert, View, TouchableOpacity, Text, Button } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import styles from './styles';
 
+
 const Defaults = () => (
+
+  //_onPressButton() {
+    // Alert.alert('You tapped the button!')
+  //}
+
 
   <View style={styles.container}>
   <Text
@@ -19,7 +25,9 @@ const Defaults = () => (
   > Default Reminders</Text>
   <View style={styles.buttonContainer}>
           <Button style={styles.btn}
-          onPress={this._onPressButton}
+          onPress={() => {
+    Alert.alert('You tapped the button!');
+  }}
             title="Homework"
             color="#000000"
           />
