@@ -6,6 +6,9 @@ import styles from './styles';
 
 
 const Defaults = () => (
+  state = {
+    placeholderText="Enter your text"
+  }
 
   //_onPressButton() {
     // Alert.alert('You tapped the button!')
@@ -26,7 +29,9 @@ const Defaults = () => (
   <View style={styles.buttonContainer}>
           <Button style={styles.btn}
           onPress={() => {
-    Alert.alert('You tapped the button!');
+            this.setState({
+             textValue: 'Homework'
+           })
   }}
             title="Homework"
             color="#000000"
