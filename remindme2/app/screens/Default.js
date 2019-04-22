@@ -23,11 +23,7 @@ class Default extends Component {
     };
     this._fetchData = this._fetchData.bind(this);
   }
-  _onPressButton() {
-    this.props.navigation.navigate("AddReminder", {
-      handleOnNavigateBack: this.handleOnNavigateBack
-    })
-  }
+
 
   componentDidMount() {
     this._fetchData();
@@ -77,8 +73,13 @@ class Default extends Component {
     //darkcyan
     return (
       <View style={styles.container}>
-      <Defaults  onPress={this._onPressButton} />
+      <Defaults  onPress={() => this.props.navigation.navigate("AddReminder", {
+        handleOnNavigateBack: this.handleOnNavigateBack
+      })
+    } />
       </View>
+      
+
 
     );
   }
