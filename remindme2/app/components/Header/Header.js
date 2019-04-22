@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 
 const Header = () => (
+
   <View style={styles.navbar}>
     <Text
       style={{

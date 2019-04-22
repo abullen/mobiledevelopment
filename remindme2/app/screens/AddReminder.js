@@ -387,7 +387,7 @@ class AddReminder extends Component {
               />
             </View>
           </Modal>
-          <Defaults />
+          
           <Modal
             open={this.state.repeatType}
             modalDidClose={() => this.setState({ repeatType: false })}

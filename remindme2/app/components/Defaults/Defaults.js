@@ -5,14 +5,9 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 
 
-const Defaults = () => (
-  state = {
-    placeholderText="Enter your text"
-  }
+const Defaults = (props) => {
+  return(
 
-  //_onPressButton() {
-    // Alert.alert('You tapped the button!')
-  //}
 
 
   <View style={styles.container}>
@@ -26,47 +21,39 @@ const Defaults = () => (
     margin: 3,
   }}
   > Default Reminders</Text>
-  <View style={styles.buttonContainer}>
-          <Button style={styles.btn}
-          onPress={() => {
-            this.setState({
-             textValue: 'Homework'
-           })
-  }}
-            title="Homework"
-            color="#000000"
-          />
-          <Button
-          onPress={this._onPressButton}
-            title="Groceries"
-            color="#000000"
-          />
-          <Button
-          onPress={this._onPressButton}
-            title="Meeting"
-            color="#000000"
-          />
-          </View>
-<View style={styles.buttonContainer}>
-          <Button
-          onPress={this._onPressButton}
-            title="Laundry"
-            color="#000000"
-          />
-          <Button
-          onPress={this._onPressButton}
-            title="Work"
-            color="#000000"
-          />
-          <Button
-          onPress={this._onPressButton}
-            title="Pay Rent"
-            color="#000000"
-          />
 
-            </View>
+  <TouchableOpacity onPress={props.onPress}>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>Homework</Text>
+          </View>
+        </TouchableOpacity>
+
+  <TouchableOpacity onPress={props.onPress}>
+                <View style={styles.button2}>
+                  <Text style={styles.buttonText}>Groceries</Text>
+                </View>
+  </TouchableOpacity>
+
+  <TouchableOpacity onPress={props.onPress}>
+          <View style={styles.button3}>
+            <Text style={styles.buttonText}>Meeting</Text>
+          </View>
+        </TouchableOpacity>
+
+  <TouchableOpacity onPress={props.onPress}>
+                <View style={styles.button}>
+                  <Text style={styles.buttonText}>Work</Text>
+                </View>
+              </TouchableOpacity>
+
+  <TouchableOpacity onPress={props.onPress}>
+                      <View style={styles.button2}>
+                        <Text style={styles.buttonText}>Pay Rent</Text>
+                      </View>
+                    </TouchableOpacity>
+
 
   </View>
-);
+)};
 
 export default Defaults;

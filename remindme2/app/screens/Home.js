@@ -3,8 +3,12 @@ import {
   StatusBar,
   SafeAreaView,
   KeyboardAvoidingView,
+  TouchableOpacity,
+  View,
+  Text,
   AsyncStorage
 } from "react-native";
+import Icon from 'react-native-vector-icons/Ionicons';
 import ActionButton from "react-native-action-button";
 
 import { Header } from "../components/Header";
@@ -71,6 +75,17 @@ class Home extends Component {
       <SafeAreaView style={{ flex: 1, backgroundColor: "#374046" }}>
         <StatusBar barStyle="light-content" />
         <Header />
+        <TouchableOpacity onPress={() =>
+          this.props.navigation.navigate("Default", {
+            handleOnNavigateBack: this.handleOnNavigateBack
+          })
+        } style={{margin: 15, alignItems: 'center'}}>
+
+        <View style={{ backgroundColor:"rgba(231,76,60,1)",marginBottom: 30,
+        width: 260, alignItems: 'center'}}>
+          <Text style={{ color: 'white', fontSize: 28}}>Use a Default Reminder</Text>
+        </View>
+       </TouchableOpacity>
 
         {this.state.data.length > 0 ? (
           <ListItem

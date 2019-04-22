@@ -3,6 +3,7 @@ import { StackNavigator } from 'react-navigation';
 
 import Home from '../screens/Home';
 import AddReminder from '../screens/AddReminder';
+import Default from '../screens/Default';
 
 export default StackNavigator(
   {
@@ -11,6 +12,9 @@ export default StackNavigator(
       navigationOptions: {
         header: () => null,
       },
+    },
+    Default: {
+      screen: Default,
     },
     AddReminder: {
       screen: AddReminder,

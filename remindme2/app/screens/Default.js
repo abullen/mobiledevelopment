@@ -3,21 +3,30 @@ import {
   StatusBar,
   SafeAreaView,
   KeyboardAvoidingView,
-  AsyncStorage
+  AsyncStorage,
+  StyleSheet,
+  Alert,
+  View
 } from "react-native";
 import ActionButton from "react-native-action-button";
 
 import { Header } from "../components/Header";
 import { Info } from "../components/Info";
 import { ListItem } from "../components/List";
+import { Defaults } from "../components/Defaults";
 
-class Home extends Component {
+class Default extends Component {
   constructor(props) {
     super(props);
     this.state = {
       data: []
     };
     this._fetchData = this._fetchData.bind(this);
+  }
+  _onPressButton() {
+    this.props.navigation.navigate("AddReminder", {
+      handleOnNavigateBack: this.handleOnNavigateBack
+    })
   }
 
   componentDidMount() {
@@ -68,31 +77,30 @@ class Home extends Component {
     //darkcyan
     return (
       <View style={styles.container}>
-      <View style={styles.buttonContainer}>
-              <Button
-              onPress={() =>
-                this.props.navigation.navigate("AddReminder", {
-                  handleOnNavigateBack: this.handleOnNavigateBack
-                })
-              }
-                title="Homework"
-              />
-              <Button
-                onPress={this._onPressButton}
-                title="Laundry"
-              />
-              <Button
-                onPress={this._onPressButton}
-                title="Groceries"
-              />
-              <Button
-                onPress={this._onPressButton}
-                title="Work"
-              />
-            </View>
+      <Defaults  onPress={this._onPressButton} />
       </View>
+
     );
   }
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#374046",
+    justifyContent: "center"
+  },
 
-export default Home;
+  topView: {
+    backgroundColor: "#65799b",
+    flex: 1,
+    justifyContent: "flex-end"
+  },
+
+  bottomView: {
+    flex: 2,
+    justifyContent: "space-around"
+  }
+});
+
+
+export default Default;
